@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escola Abelha Rainha | Educação Infantil e Berçário em Guarulhos</title>
+<meta name="description" content="Desde 1997 cuidando e educando crianças de 4 meses a 5 anos em Guarulhos. Berçário, Educação Infantil, programa bilíngue e ambiente que acolhe. Vila Milton, Guarulhos, SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mel:#F5B301;         /* amarelo mel */
+    --mel-claro:#FBD24B;
+    --mel-escuro:#E09500;
+    --madeira:#7A4E28;     /* madeira */
+    --madeira-esc:#5A3A1E;
+    --azul:#2AA5DE;        /* rede azul */
+    --azul-esc:#1583BC;
+    --verde:#57A863;
+    --areia:#FBF4E4;       /* areia clara */
+    --creme:#FFFDF7;
+    --tinta:#3A2A17;
+    --tinta-suave:#6B5842;
+    --branco:#ffffff;
+    --sombra:0 18px 40px -18px rgba(90,58,30,.35);
+    --radius:26px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;color:var(--tinta);background:var(--creme);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3,.logo{font-family:'Baloo 2',cursive}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{width:min(1140px,92%);margin-inline:auto}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Baloo 2';font-weight:700;font-size:1.02rem;padding:.9rem 1.7rem;border-radius:50px;border:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;line-height:1}
+  .btn:hover{transform:translateY(-3px)}
+  .btn-mel{background:var(--mel);color:var(--madeira-esc);box-shadow:0 12px 24px -10px rgba(224,149,0,.7)}
+  .btn-branco{background:#fff;color:var(--madeira);box-shadow:0 12px 24px -12px rgba(0,0,0,.3)}
+  .btn-out{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
+  .btn-out:hover{background:#fff;color:var(--madeira)}
+  .eyebrow{font-family:'Baloo 2';font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--azul-esc)}
+  section{position:relative}
+
+  /* ===== NAV ===== */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;padding:1.1rem 0}
+  header.scrolled{background:rgba(255,253,247,.92);backdrop-filter:blur(10px);box-shadow:0 6px 20px -12px rgba(90,58,30,.4);padding:.6rem 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.5rem;color:#fff;transition:color .3s}
+  header.scrolled .logo{color:var(--madeira-esc)}
+  .logo .bee{width:42px;height:42px;flex:none}
+  .nav-links{display:flex;gap:1.6rem;align-items:center}
+  .nav-links a{font-weight:700;color:rgba(255,255,255,.92);font-size:.98rem;transition:color .2s}
+  .nav-links a:hover{color:var(--mel-claro)}
+  header.scrolled .nav-links a{color:var(--tinta-suave)}
+  header.scrolled .nav-links a:hover{color:var(--mel-escuro)}
+  .nav .btn{font-size:.92rem;padding:.7rem 1.3rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+  .burger span{width:26px;height:3px;background:#fff;border-radius:3px;transition:.3s}
+  header.scrolled .burger span{background:var(--madeira-esc)}
+
+  /* ===== HERO ===== */
+  .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff}
+  .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero .veil{position:absolute;inset:0;z-index:1;background:
+     linear-gradient(180deg,rgba(58,42,23,.55) 0%,rgba(58,42,23,.15) 35%,rgba(58,42,23,.35) 70%,rgba(58,42,23,.78) 100%);}
+  .hero .wrap{position:relative;z-index:2;padding:7rem 0 4rem}
+  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,179,1,.92);color:var(--madeira-esc);font-family:'Baloo 2';font-weight:700;padding:.4rem 1rem;border-radius:50px;font-size:.86rem;margin-bottom:1.3rem}
+  .hero h1{font-size:clamp(2.6rem,6.2vw,4.7rem);font-weight:800;line-height:1.02;text-shadow:0 6px 30px rgba(0,0,0,.35);max-width:15ch}
+  .hero h1 span{color:var(--mel-claro)}
+  .hero p.lead{font-size:clamp(1.05rem,2.2vw,1.35rem);max-width:46ch;margin:1.3rem 0 2rem;font-weight:600;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:1rem}
+  .hero-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:1.6rem;animation:bob 1.8s ease-in-out infinite;opacity:.85}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+  /* honeycomb top texture on sections */
+  .honey-strip{background:var(--mel);color:var(--madeira-esc);padding:0}
+  .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .feat{display:flex;gap:.8rem;align-items:flex-start;padding:1.7rem 1.5rem;border-right:2px dashed rgba(122,78,40,.25)}
+  .feat:last-child{border-right:none}
+  .feat .ic{font-size:1.7rem;line-height:1}
+  .feat h4{font-family:'Baloo 2';font-size:1.02rem;font-weight:700;margin-bottom:.15rem}
+  .feat p{font-size:.9rem;color:var(--madeira);font-weight:600;line-height:1.35}
+
+  /* ===== SOBRE ===== */
+  .sobre{padding:6rem 0 5rem;background:var(--creme);position:relative}
+  .sobre .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+  .sec-title{font-size:clamp(2rem,4vw,2.9rem);font-weight:800;line-height:1.08;margin:.5rem 0 1rem;color:var(--madeira-esc)}
+  .sobre p{color:var(--tinta-suave);font-size:1.06rem;margin-bottom:1.1rem}
+  .sobre .art{position:relative;aspect-ratio:1/1;border-radius:38% 62% 58% 42%/48% 40% 60% 52%;background:
+     radial-gradient(circle at 30% 30%,var(--mel-claro),var(--mel) 55%,var(--mel-escuro));
+     display:grid;place-items:center;box-shadow:var(--sombra);animation:blob 12s ease-in-out infinite}
+  @keyframes blob{0%,100%{border-radius:38% 62% 58% 42%/48% 40% 60% 52%}50%{border-radius:60% 40% 42% 58%/52% 58% 42% 48%}}
+  .sobre .art .bigbee{width:60%;filter:drop-shadow(0 14px 22px rgba(90,58,30,.35))}
+  .stats{display:flex;gap:2.2rem;margin-top:1.6rem;flex-wrap:wrap}
+  .stat b{font-family:'Baloo 2';font-size:2.1rem;color:var(--azul-esc);display:block;line-height:1}
+  .stat span{font-size:.9rem;font-weight:700;color:var(--tinta-suave)}
+
+  /* ===== SEGMENTOS ===== */
+  .segmentos{padding:5.5rem 0 6rem;background:linear-gradient(180deg,var(--areia),#fff);position:relative}
+  .head-center{text-align:center;max-width:60ch;margin:0 auto 3rem}
+  .head-center p{color:var(--tinta-suave);font-size:1.05rem;margin-top:.6rem}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .card{background:#fff;border-radius:var(--radius);padding:2rem 1.7rem;box-shadow:var(--sombra);border:1px solid rgba(122,78,40,.08);transition:transform .25s ease;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-8px)}
+  .card .tag{position:absolute;top:0;right:0;background:var(--azul);color:#fff;font-family:'Baloo 2';font-weight:700;font-size:.72rem;padding:.35rem .9rem;border-bottom-left-radius:14px}
+  .card .emoji{font-size:2.6rem;margin-bottom:.7rem}
+  .card h3{font-size:1.4rem;color:var(--madeira-esc);margin-bottom:.15rem}
+  .card .idade{font-weight:800;color:var(--azul-esc);font-size:.92rem;margin-bottom:.7rem}
+  .card p{color:var(--tinta-suave);font-size:.98rem}
+  .card ul{list-style:none;margin-top:.9rem;display:flex;flex-direction:column;gap:.4rem}
+  .card li{font-size:.92rem;font-weight:600;color:var(--tinta);display:flex;gap:.5rem;align-items:center}
+  .card li::before{content:"🐝";font-size:.85rem}
+
+  /* foto na secao sobre */
+  .art-photo{position:relative;border-radius:32px 32px 32px 60px;overflow:hidden;box-shadow:var(--sombra);border:6px solid #fff;transform:rotate(-1.5deg)}
+  .art-photo img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .art-photo::after{content:"🐝";position:absolute;right:-10px;bottom:-10px;font-size:2.4rem;background:var(--mel);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--sombra);transform:rotate(1.5deg)}
+
+  /* ===== GALERIA ===== */
+  .galeria{padding:6rem 0;background:linear-gradient(180deg,#fff,var(--areia))}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px;margin-top:2.6rem}
+  .gal-grid figure{margin:0;position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 30px -18px rgba(90,58,30,.6);cursor:pointer}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.07)}
+  .gal-grid .tall{grid-row:span 2}
+  .gal-grid .wide{grid-column:span 2}
+  .gal-cap{position:absolute;inset:auto 0 0 0;padding:.9rem .8rem .6rem;font-family:'Baloo 2';font-weight:700;color:#fff;font-size:.86rem;background:linear-gradient(0deg,rgba(58,42,23,.8),transparent);opacity:0;transition:opacity .3s}
+  .gal-grid figure:hover .gal-cap{opacity:1}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(30,22,14,.92);display:none;align-items:center;justify-content:center;padding:3vw}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:90vh;border-radius:14px;box-shadow:0 30px 80px -20px #000}
+  .lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:2.4rem;font-family:'Baloo 2';cursor:pointer;line-height:1}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;padding:0 1.2rem;user-select:none;opacity:.8}
+  .lb .nav:hover{opacity:1}
+  .lb .prev{left:1vw}.lb .next{right:1vw}
+
+  /* ===== ATIVIDADES ===== */
+  .atividades{padding:5.5rem 0;background:var(--madeira-esc);color:#fff;position:relative;overflow:hidden}
+  .atividades::before{content:"";position:absolute;inset:0;opacity:.08;background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0l24 14v28L28 56 4 42V14z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M28 56l24 14v28' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M28 56L4 70v28' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");background-size:56px}
+  .atividades .wrap{position:relative;z-index:1}
+  .atividades .sec-title{color:#fff}
+  .atv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:2.6rem}
+  .atv{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:0;overflow:hidden;text-align:center;transition:transform .25s}
+  .atv:hover{transform:translateY(-6px)}
+  .atv .ph{height:150px;overflow:hidden;background:rgba(255,255,255,.05)}
+  .atv .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+  .atv:hover .ph img{transform:scale(1.07)}
+  .atv b{display:block;font-family:'Baloo 2';font-size:1.05rem;padding:.85rem .5rem}
+  /* card sem foto: area em branco discreta */
+  .atv.blank .ph{background:
+     repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0 10px,rgba(255,255,255,.015) 10px 20px)}
+  .atv.blank b{color:rgba(255,255,255,.75)}
+  .atv:hover b{color:var(--mel-claro)}
+
+  /* ===== DIFERENCIAIS ===== */
+  .dif{padding:6rem 0;background:var(--creme)}
+  .dif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.5rem}
+  .dif-item{display:flex;gap:1.1rem;background:#fff;border-radius:20px;padding:1.5rem 1.6rem;box-shadow:0 12px 30px -20px rgba(90,58,30,.5);border:1px solid rgba(122,78,40,.07)}
+  .dif-item .n{flex:none;width:52px;height:52px;border-radius:16px;background:var(--mel);display:grid;place-items:center;font-size:1.5rem}
+  .dif-item h4{font-family:'Baloo 2';font-size:1.15rem;color:var(--madeira-esc);margin-bottom:.2rem}
+  .dif-item p{font-size:.95rem;color:var(--tinta-suave)}
+
+  /* ===== FRASE ===== */
+  .quote{padding:5rem 0;background:var(--azul);color:#fff;text-align:center;position:relative}
+  .quote .wrap{max-width:52ch}
+  .quote p{font-family:'Baloo 2';font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:600;line-height:1.3}
+  .quote span{display:block;margin-top:1rem;font-family:'Nunito';font-weight:700;font-size:1rem;opacity:.9}
+
+  /* ===== CONTATO ===== */
+  .contato{padding:6rem 0;background:linear-gradient(180deg,#fff,var(--areia))}
+  .contato .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch}
+  .contato .info h2{color:var(--madeira-esc)}
+  .clist{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
+  .cline{display:flex;gap:1rem;align-items:flex-start}
+  .cline .ci{flex:none;width:46px;height:46px;border-radius:14px;background:var(--mel);display:grid;place-items:center;font-size:1.3rem}
+  .cline b{font-family:'Baloo 2';display:block;color:var(--madeira-esc);font-size:1.02rem}
+  .cline a,.cline span{color:var(--tinta-suave);font-weight:600}
+  .cline a:hover{color:var(--azul-esc)}
+  .socials{display:flex;gap:.7rem;margin-top:1.8rem}
+  .socials a{width:46px;height:46px;border-radius:50%;background:var(--madeira-esc);color:#fff;display:grid;place-items:center;transition:transform .2s,background .2s;font-weight:700}
+  .socials a:hover{transform:translateY(-4px);background:var(--mel);color:var(--madeira-esc)}
+  .mapbox{border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra);min-height:420px}
+  .mapbox iframe{width:100%;height:100%;min-height:420px;border:0}
+
+  /* CTA final */
+  .final{background:var(--mel);color:var(--madeira-esc);text-align:center;padding:4.5rem 0}
+  .final h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+  .final p{font-size:1.1rem;font-weight:600;margin:.7rem auto 1.8rem;max-width:44ch}
+
+  /* Footer */
+  footer{background:var(--madeira-esc);color:rgba(255,255,255,.82);padding:2.6rem 0 2rem;text-align:center;font-size:.9rem}
+  footer .logo{justify-content:center;color:#fff;margin-bottom:.8rem}
+  footer .fl{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin:.8rem 0 1.2rem}
+  footer .fl a:hover{color:var(--mel-claro)}
+  footer small{display:block;opacity:.6;margin-top:.8rem}
+
+  /* floating bee */
+  .float-bee{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(37,211,102,.7);animation:pulse 2.4s infinite}
+  .float-bee svg{width:32px;height:32px;fill:#fff}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .nav-links{position:fixed;inset:0 0 0 auto;width:min(78%,320px);flex-direction:column;justify-content:center;background:var(--creme);padding:2rem;gap:1.6rem;transform:translateX(100%);transition:transform .3s ease;box-shadow:-20px 0 50px -20px rgba(0,0,0,.4)}
+    .nav-links.open{transform:none}
+    .nav-links a{color:var(--tinta) !important;font-size:1.15rem}
+    .burger{display:flex}
+    .feats{grid-template-columns:1fr 1fr}
+    .feat{border-right:none;border-bottom:2px dashed rgba(122,78,40,.2)}
+    .sobre .grid,.contato .grid{grid-template-columns:1fr;gap:2.4rem}
+    .sobre .art{max-width:340px;margin:0 auto;order:-1}
+    .cards{grid-template-columns:1fr}
+    .atv-grid{grid-template-columns:1fr 1fr}
+    .dif-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+    .gal-grid .wide{grid-column:span 2}
+    .art-photo{max-width:340px;margin:0 auto;order:-1}
+  }
+  @media(max-width:480px){.feats{grid-template-columns:1fr}.atv-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- SVG da abelha reutilizavel -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bee" viewBox="0 0 64 64">
+    <ellipse cx="32" cy="40" rx="15" ry="18" fill="#F5B301"/>
+    <path d="M20 30h24M18 40h28M20 50h24" stroke="#3A2A17" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="21" cy="24" rx="11" ry="8" fill="#fff" opacity=".85" transform="rotate(-28 21 24)"/>
+    <ellipse cx="43" cy="24" rx="11" ry="8" fill="#fff" opacity=".85" transform="rotate(28 43 24)"/>
+    <circle cx="32" cy="20" r="9" fill="#3A2A17"/>
+    <circle cx="29" cy="19" r="2" fill="#fff"/><circle cx="35" cy="19" r="2" fill="#fff"/>
+    <path d="M28 12l-3-5M36 12l3-5" stroke="#3A2A17" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="25" cy="7" r="2" fill="#3A2A17"/><circle cx="39" cy="7" r="2" fill="#3A2A17"/>
+  </symbol>
+</svg>
+
+<header id="hdr">
+  <nav class="nav wrap">
+    <a href="#topo" class="logo"><svg class="bee"><use href="#bee"/></svg>Abelha Rainha</a>
+    <div class="nav-links" id="menu">
+      <a href="#sobre">A escola</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#atividades">Atividades</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-mel" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Agende uma visita</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <video autoplay muted loop playsinline poster="poster.jpg">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="wrap">
+    <span class="hero-badge">🐝 Desde 1997 em Guarulhos</span>
+    <h1>Onde cada criança <span>cresce, brinca</span> e aprende feliz</h1>
+    <p class="lead">Educação Infantil e Berçário para crianças de 4 meses a 5 anos, com acolhimento, brincadeira e um ambiente pensado para florescer.</p>
+    <div class="hero-cta">
+      <a class="btn btn-mel" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Agende uma visita</a>
+      <a class="btn btn-out" href="#sobre">Conheça a proposta</a>
+    </div>
+  </div>
+  <a href="#destaques" class="hero-scroll" aria-label="Rolar">↓</a>
+</section>
+
+<!-- FAIXA DESTAQUES -->
+<section class="honey-strip" id="destaques">
+  <div class="wrap" style="width:min(1240px,100%)">
+    <div class="feats">
+      <div class="feat"><span class="ic">🌎</span><div><h4>Programa bilíngue</h4><p>Inglês na rotina a partir dos 2 anos</p></div></div>
+      <div class="feat"><span class="ic">📱</span><div><h4>Berçário monitorado</h4><p>Acompanhe o dia do bebê pelo aplicativo</p></div></div>
+      <div class="feat"><span class="ic">🥗</span><div><h4>Nutrição cuidada</h4><p>Acompanhamento nutricional das refeições</p></div></div>
+      <div class="feat"><span class="ic">🏡</span><div><h4>Ambiente acolhedor</h4><p>O espaço como o terceiro educador</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="eyebrow">Nossa proposta</span>
+      <h2 class="sec-title">Uma escola que aprende junto com a criança</h2>
+      <p>Nossa proposta pedagógica se fundamenta na abordagem sócio construtivista, em que o ensino e a aprendizagem acontecem pela interação entre professor e aluno. Valorizamos os conhecimentos que cada criança já traz e construímos, a partir deles, novas descobertas.</p>
+      <p>Com materiais diferenciados, muita brincadeira e trocas com colegas e educadores, cada dia é uma oportunidade de crescer com autonomia, afeto e curiosidade.</p>
+      <div class="stats">
+        <div class="stat"><b>+25</b><span>anos de história</span></div>
+        <div class="stat"><b>4m a 5a</b><span>faixa atendida</span></div>
+        <div class="stat"><b>1997</b><span>fundada em Guarulhos</span></div>
+      </div>
+    </div>
+    <div class="art-photo reveal"><img src="p03.jpg" alt="Criança explorando com lupa no ateliê da Escola Abelha Rainha" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- SEGMENTOS -->
+<section class="segmentos" id="segmentos">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow">Segmentos</span>
+      <h2 class="sec-title">Cada fase no seu tempo</h2>
+      <p>Do colinho aos primeiros passos rumo à alfabetização, acompanhamos cada etapa com carinho e intencionalidade.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="tag">4 a 18 meses</span>
+        <div class="emoji">🍼</div>
+        <h3>Berçário, Fase Colinho</h3>
+        <div class="idade">Bebês de 4 a 18 meses</div>
+        <p>O acolhimento dos primeiros meses, com rotina de sono, alimentação e muito afeto.</p>
+        <ul><li>Monitoramento pelo aplicativo</li><li>Estímulo sensorial e motor</li><li>Cuidado individualizado</li></ul>
+      </div>
+      <div class="card reveal">
+        <span class="tag">1 a 2 anos</span>
+        <div class="emoji">👣</div>
+        <h3>Berçário, Fase Passinho</h3>
+        <div class="idade">Bebês de 1 a 2 anos</div>
+        <p>Os primeiros passos, a descoberta do corpo e a curiosidade que move cada exploração.</p>
+        <ul><li>Psicomotricidade</li><li>Musicalização</li><li>Início do bilíngue aos 2 anos</li></ul>
+      </div>
+      <div class="card reveal">
+        <span class="tag">2 a 5 anos</span>
+        <div class="emoji">🎨</div>
+        <h3>Educação Infantil</h3>
+        <div class="idade">Crianças de 2 a 5 anos</div>
+        <p>Brincar, criar e conviver, preparando o caminho para a alfabetização com autonomia.</p>
+        <ul><li>Programa bilíngue</li><li>Ballet e capoeira</li><li>Projetos e vivências</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATIVIDADES -->
+<section class="atividades" id="atividades">
+  <div class="wrap">
+    <div class="head-center reveal" style="color:#fff">
+      <span class="eyebrow" style="color:var(--mel-claro)">No dia a dia</span>
+      <h2 class="sec-title">Atividades que despertam talentos</h2>
+      <p style="color:rgba(255,255,255,.82)">Corpo, música, arte e cultura fazem parte da rotina para desenvolver a criança por inteiro.</p>
+    </div>
+    <div class="atv-grid">
+      <div class="atv blank reveal"><div class="ph"></div><b>Musicalização</b></div>
+      <div class="atv reveal"><div class="ph"><img src="atv-psico.jpg" alt="Criança em atividade de psicomotricidade e faz de conta"></div><b>Psicomotricidade</b></div>
+      <div class="atv blank reveal"><div class="ph"></div><b>Ballet</b></div>
+      <div class="atv blank reveal"><div class="ph"></div><b>Capoeira</b></div>
+      <div class="atv reveal"><div class="ph"><img src="atv-bilingue.jpg" alt="Criança com fones em atividade de inglês"></div><b>Bilíngue</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="dif" id="diferenciais">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow">Por que a Abelha Rainha</span>
+      <h2 class="sec-title">Cuidado de verdade em cada detalhe</h2>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-item reveal"><div class="n">🌎</div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
+      <div class="dif-item reveal"><div class="n">📱</div><div><h4>Berçário conectado aos pais</h4><p>Acompanhamento em tempo real do dia do bebê por aplicativo, para famílias tranquilas.</p></div></div>
+      <div class="dif-item reveal"><div class="n">🥗</div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
+      <div class="dif-item reveal"><div class="n">🏡</div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
+      <div class="dif-item reveal"><div class="n">👩‍🏫</div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
+      <div class="dif-item reveal"><div class="n">🧩</div><div><h4>Aprender brincando</h4><p>Abordagem sócio construtivista que coloca a criança no centro da descoberta.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow">Nossos momentos</span>
+      <h2 class="sec-title">O dia a dia na Abelha Rainha</h2>
+      <p>Explorar, sentir, criar e descobrir. Um pouquinho das vivências reais das nossas crianças.</p>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="tall" data-cap="Explorando o mundo com curiosidade"><img src="p03.jpg" alt="Criança com lupa"><figcaption class="gal-cap">Curiosidade que descobre o mundo</figcaption></figure>
+      <figure data-cap="Ateliê de tintas naturais"><img src="p05.jpg" alt="Criança pintando com tinta natural"><figcaption class="gal-cap">Ateliê de tintas naturais</figcaption></figure>
+      <figure data-cap="Pigmentos da terra"><img src="p01.jpg" alt="Placa de pigmentos naturais"><figcaption class="gal-cap">Cores que vêm da terra</figcaption></figure>
+      <figure class="wide" data-cap="Sorrisos que aquecem"><img src="p08.jpg" alt="Bebê sorrindo"><figcaption class="gal-cap">Sorrisos que aquecem o dia</figcaption></figure>
+      <figure data-cap="Mãos na terra"><img src="p04.jpg" alt="Mãos com terra e plantas"><figcaption class="gal-cap">Mãozinhas que exploram</figcaption></figure>
+      <figure data-cap="Descobertas sensoriais"><img src="p06.jpg" alt="Bebê explorando folha"><figcaption class="gal-cap">Descobertas sensoriais</figcaption></figure>
+      <figure data-cap="Brincar é aprender"><img src="p09.jpg" alt="Bebê brincando com folha"><figcaption class="gal-cap">Brincar é aprender</figcaption></figure>
+      <figure class="tall" data-cap="Concentração e autonomia"><img src="p10.jpg" alt="Criança em atividade com açafrão"><figcaption class="gal-cap">Concentração e autonomia</figcaption></figure>
+      <figure data-cap="Cores e texturas"><img src="p11.jpg" alt="Criança pintando com pigmento rosa"><figcaption class="gal-cap">Cores e texturas</figcaption></figure>
+      <figure data-cap="Nosso espaço"><img src="p02.jpg" alt="Espaço do ateliê"><figcaption class="gal-cap">Ambientes que convidam a explorar</figcaption></figure>
+      <figure data-cap="Musicalidade e ritmo"><img src="p07.jpg" alt="Bebê com prato de madeira"><figcaption class="gal-cap">Ritmo, som e movimento</figcaption></figure>
+      <figure data-cap="Cada criança, uma rainha"><img src="p12.jpg" alt="Menina em atividade sensorial"><figcaption class="gal-cap">Cada criança, uma pequena rainha</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE -->
+<section class="quote">
+  <div class="wrap">
+    <p>“Aqui, cada criança é única e cuidada como uma pequena rainha.”</p>
+    <span>Escola Abelha Rainha, especialista em Educação Infantil</span>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="wrap grid">
+    <div class="info reveal">
+      <span class="eyebrow">Fale com a gente</span>
+      <h2 class="sec-title">Venha nos visitar</h2>
+      <p style="color:var(--tinta-suave)">Agende uma visita e conheça de perto o espaço onde seu filho vai crescer feliz.</p>
+      <div class="clist">
+        <div class="cline"><div class="ci">📍</div><div><b>Endereço</b><span>Rua Capitão Rabelo, 93, Vila Milton, Guarulhos, SP</span></div></div>
+        <div class="cline"><div class="ci">💬</div><div><b>WhatsApp</b><a href="https://wa.me/5511961805249" target="_blank" rel="noopener">(11) 96180-5249</a></div></div>
+        <div class="cline"><div class="ci">📞</div><div><b>Telefone</b><a href="tel:+5511961805249">(11) 96180-5249</a></div></div>
+        <div class="cline"><div class="ci">✉️</div><div><b>E-mail</b><a href="mailto:contato@escolaabelharainha.com.br">contato@escolaabelharainha.com.br</a></div></div>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/eeiabelharainha/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/eeiabelharainha" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://www.youtube.com/@eeiabelharainha" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div class="mapbox reveal">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Escola Abelha Rainha"
+        src="https://www.google.com/maps?q=Rua%20Capit%C3%A3o%20Rabelo%2093%20Vila%20Milton%20Guarulhos%20SP&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Sua criança merece um lugar especial 🐝</h2>
+    <p>Matrículas abertas. Fale com a gente e agende sua visita hoje mesmo.</p>
+    <a class="btn btn-branco" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20matr%C3%ADculas%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Quero fazer a matrícula</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#topo" class="logo"><svg class="bee"><use href="#bee"/></svg>Abelha Rainha</a>
+    <div class="fl">
+      <a href="#sobre">A escola</a><a href="#segmentos">Segmentos</a><a href="#atividades">Atividades</a><a href="#contato">Contato</a>
+    </div>
+    <p>Rua Capitão Rabelo, 93, Vila Milton, Guarulhos, SP · (11) 96180-5249</p>
+    <small>© 2026 Escola Abelha Rainha, Educação Infantil e Berçário. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<a class="float-bee" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1 1 12 24h-.01a12 12 0 0 1-5.73-1.46L.06 24zM6.6 20.1l.36.22a9.9 9.9 0 0 0 5.05 1.38h.01a9.87 9.87 0 1 0-8.36-4.6l.24.38-1 3.66 3.7-.97zM17.5 14.3c-.15-.25-.55-.4-1.15-.7s-1.35-.66-1.55-.74c-.2-.07-.36-.11-.5.11s-.58.74-.71.89c-.13.15-.26.16-.5.05a8 8 0 0 1-2.36-1.46 8.8 8.8 0 0 1-1.63-2.03c-.17-.29 0-.44.13-.58.11-.13.25-.31.37-.47.12-.16.16-.27.24-.45.08-.18.04-.34-.02-.47-.06-.13-.5-1.32-.7-1.8-.18-.46-.37-.4-.5-.4h-.44a.83.83 0 0 0-.6.28 2.53 2.53 0 0 0-.79 1.88c0 1.11.8 2.18.91 2.33.11.15 1.58 2.41 3.83 3.38a13 13 0 0 0 1.28.47c.54.17 1.03.15 1.42.09.43-.06 1.35-.55 1.54-1.09.19-.53.19-.99.13-1.08z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <span class="x" id="lbx">×</span>
+  <span class="nav prev" id="lbprev">‹</span>
+  <img id="lbimg" src="" alt="">
+  <span class="nav next" id="lbnext">›</span>
+</div>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>60));
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // lightbox da galeria
+  const figs=[...document.querySelectorAll('.gal-grid figure img')];
+  const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+  let cur=0;
+  function show(i){cur=(i+figs.length)%figs.length;lbimg.src=figs[cur].src;lb.classList.add('open')}
+  figs.forEach((im,i)=>im.parentElement.addEventListener('click',()=>show(i)));
+  document.getElementById('lbx').addEventListener('click',()=>lb.classList.remove('open'));
+  document.getElementById('lbnext').addEventListener('click',e=>{e.stopPropagation();show(cur+1)});
+  document.getElementById('lbprev').addEventListener('click',e=>{e.stopPropagation();show(cur-1)});
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
+</script>
+</body>
+</html>
