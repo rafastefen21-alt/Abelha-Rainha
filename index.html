@@ -7,7 +7,7 @@
 <meta name="description" content="Desde 1997 cuidando e educando crianças de 4 meses a 5 anos em Guarulhos. Berçário, Educação Infantil, programa bilíngue e ambiente que acolhe. Vila Milton, Guarulhos, SP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --mel:#F5B301;         /* amarelo mel */
@@ -28,18 +28,18 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Nunito',system-ui,sans-serif;color:var(--tinta);background:var(--creme);line-height:1.65;overflow-x:hidden}
-  h1,h2,h3,.logo{font-family:'Baloo 2',cursive}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--tinta);background:var(--creme);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3,.logo{font-family:'Fredoka',cursive}
   img{max-width:100%;display:block}
   a{text-decoration:none;color:inherit}
   .wrap{width:min(1140px,92%);margin-inline:auto}
-  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Baloo 2';font-weight:700;font-size:1.02rem;padding:.9rem 1.7rem;border-radius:50px;border:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;line-height:1}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Fredoka';font-weight:700;font-size:1.02rem;padding:.9rem 1.7rem;border-radius:50px;border:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;line-height:1}
   .btn:hover{transform:translateY(-3px)}
   .btn-mel{background:var(--mel);color:var(--madeira-esc);box-shadow:0 12px 24px -10px rgba(224,149,0,.7)}
   .btn-branco{background:#fff;color:var(--madeira);box-shadow:0 12px 24px -12px rgba(0,0,0,.3)}
   .btn-out{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
   .btn-out:hover{background:#fff;color:var(--madeira)}
-  .eyebrow{font-family:'Baloo 2';font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--azul-esc)}
+  .eyebrow{font-family:'Caveat',cursive;font-weight:700;letter-spacing:.02em;font-size:1.35rem;color:var(--mel-escuro)}
   section{position:relative}
 
   /* ===== NAV ===== */
@@ -65,7 +65,7 @@
   .hero .veil{position:absolute;inset:0;z-index:1;background:
      linear-gradient(180deg,rgba(58,42,23,.55) 0%,rgba(58,42,23,.15) 35%,rgba(58,42,23,.35) 70%,rgba(58,42,23,.78) 100%);}
   .hero .wrap{position:relative;z-index:2;padding:7rem 0 4rem}
-  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,179,1,.92);color:var(--madeira-esc);font-family:'Baloo 2';font-weight:700;padding:.4rem 1rem;border-radius:50px;font-size:.86rem;margin-bottom:1.3rem}
+  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,179,1,.92);color:var(--madeira-esc);font-family:'Fredoka';font-weight:700;padding:.4rem 1rem;border-radius:50px;font-size:.86rem;margin-bottom:1.3rem}
   .hero h1{font-size:clamp(2.6rem,6.2vw,4.7rem);font-weight:800;line-height:1.02;text-shadow:0 6px 30px rgba(0,0,0,.35);max-width:15ch}
   .hero h1 span{color:var(--mel-claro)}
   .hero p.lead{font-size:clamp(1.05rem,2.2vw,1.35rem);max-width:46ch;margin:1.3rem 0 2rem;font-weight:600;text-shadow:0 2px 14px rgba(0,0,0,.4)}
@@ -73,13 +73,12 @@
   .hero-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:1.6rem;animation:bob 1.8s ease-in-out infinite;opacity:.85}
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
 
-  /* honeycomb top texture on sections */
   .honey-strip{background:var(--mel);color:var(--madeira-esc);padding:0}
   .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
   .feat{display:flex;gap:.8rem;align-items:flex-start;padding:1.7rem 1.5rem;border-right:2px dashed rgba(122,78,40,.25)}
   .feat:last-child{border-right:none}
   .feat .ic{font-size:1.7rem;line-height:1}
-  .feat h4{font-family:'Baloo 2';font-size:1.02rem;font-weight:700;margin-bottom:.15rem}
+  .feat h4{font-family:'Fredoka';font-size:1.02rem;font-weight:700;margin-bottom:.15rem}
   .feat p{font-size:.9rem;color:var(--madeira);font-weight:600;line-height:1.35}
 
   /* ===== SOBRE ===== */
@@ -93,20 +92,24 @@
   @keyframes blob{0%,100%{border-radius:38% 62% 58% 42%/48% 40% 60% 52%}50%{border-radius:60% 40% 42% 58%/52% 58% 42% 48%}}
   .sobre .art .bigbee{width:60%;filter:drop-shadow(0 14px 22px rgba(90,58,30,.35))}
   .stats{display:flex;gap:2.2rem;margin-top:1.6rem;flex-wrap:wrap}
-  .stat b{font-family:'Baloo 2';font-size:2.1rem;color:var(--azul-esc);display:block;line-height:1}
+  .stat b{font-family:'Fredoka';font-size:2.1rem;color:var(--madeira-esc);display:block;line-height:1}
   .stat span{font-size:.9rem;font-weight:700;color:var(--tinta-suave)}
 
   /* ===== SEGMENTOS ===== */
-  .segmentos{padding:5.5rem 0 6rem;background:linear-gradient(180deg,var(--areia),#fff);position:relative}
+  .segmentos{padding:5.5rem 0 6rem;position:relative;
+    background:
+      linear-gradient(rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg,rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      #fffdf7}
   .head-center{text-align:center;max-width:60ch;margin:0 auto 3rem}
   .head-center p{color:var(--tinta-suave);font-size:1.05rem;margin-top:.6rem}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
   .card{background:#fff;border-radius:var(--radius);padding:2rem 1.7rem;box-shadow:var(--sombra);border:1px solid rgba(122,78,40,.08);transition:transform .25s ease;position:relative;overflow:hidden}
   .card:hover{transform:translateY(-8px)}
-  .card .tag{position:absolute;top:0;right:0;background:var(--azul);color:#fff;font-family:'Baloo 2';font-weight:700;font-size:.72rem;padding:.35rem .9rem;border-bottom-left-radius:14px}
+  .card .tag{position:absolute;top:0;right:0;background:var(--madeira-esc);color:#fff;font-family:'Fredoka';font-weight:700;font-size:.72rem;padding:.35rem .9rem;border-bottom-left-radius:14px}
   .card .emoji{font-size:2.6rem;margin-bottom:.7rem}
   .card h3{font-size:1.4rem;color:var(--madeira-esc);margin-bottom:.15rem}
-  .card .idade{font-weight:800;color:var(--azul-esc);font-size:.92rem;margin-bottom:.7rem}
+  .card .idade{font-weight:800;color:var(--madeira-esc);font-size:.92rem;margin-bottom:.7rem}
   .card p{color:var(--tinta-suave);font-size:.98rem}
   .card ul{list-style:none;margin-top:.9rem;display:flex;flex-direction:column;gap:.4rem}
   .card li{font-size:.92rem;font-weight:600;color:var(--tinta);display:flex;gap:.5rem;align-items:center}
@@ -118,21 +121,29 @@
   .art-photo::after{content:"🐝";position:absolute;right:-10px;bottom:-10px;font-size:2.4rem;background:var(--mel);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--sombra);transform:rotate(1.5deg)}
 
   /* ===== GALERIA ===== */
-  .galeria{padding:6rem 0;background:linear-gradient(180deg,#fff,var(--areia))}
+  .galeria{padding:6rem 0;
+    background:
+      linear-gradient(rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg,rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      #fffdf7}
+  #galeria .head-center{max-width:960px}
+  #galeria .sec-title{white-space:nowrap}
+  @media(max-width:720px){#galeria .sec-title{white-space:normal}}
   .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px;margin-top:2.6rem}
   .gal-grid figure{margin:0;position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 30px -18px rgba(90,58,30,.6);cursor:pointer}
-  .gal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .5s ease}
+  .gal-grid .wide img{object-position:50% 14%}
   .gal-grid figure:hover img{transform:scale(1.07)}
   .gal-grid .tall{grid-row:span 2}
   .gal-grid .wide{grid-column:span 2}
-  .gal-cap{position:absolute;inset:auto 0 0 0;padding:.9rem .8rem .6rem;font-family:'Baloo 2';font-weight:700;color:#fff;font-size:.86rem;background:linear-gradient(0deg,rgba(58,42,23,.8),transparent);opacity:0;transition:opacity .3s}
+  .gal-cap{position:absolute;inset:auto 0 0 0;padding:.9rem .8rem .6rem;font-family:'Fredoka';font-weight:700;color:#fff;font-size:.86rem;background:linear-gradient(0deg,rgba(58,42,23,.8),transparent);opacity:0;transition:opacity .3s}
   .gal-grid figure:hover .gal-cap{opacity:1}
 
   /* lightbox */
   .lb{position:fixed;inset:0;z-index:200;background:rgba(30,22,14,.92);display:none;align-items:center;justify-content:center;padding:3vw}
   .lb.open{display:flex}
   .lb img{max-width:92vw;max-height:90vh;border-radius:14px;box-shadow:0 30px 80px -20px #000}
-  .lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:2.4rem;font-family:'Baloo 2';cursor:pointer;line-height:1}
+  .lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:2.4rem;font-family:'Fredoka';cursor:pointer;line-height:1}
   .lb .nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;padding:0 1.2rem;user-select:none;opacity:.8}
   .lb .nav:hover{opacity:1}
   .lb .prev{left:1vw}.lb .next{right:1vw}
@@ -144,31 +155,24 @@
   .atividades .wrap{position:relative;z-index:1}
   .atividades .sec-title{color:#fff}
   .atv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:2.6rem}
-  .atv{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:0;overflow:hidden;text-align:center;transition:transform .25s}
-  .atv:hover{transform:translateY(-6px)}
-  .atv .ph{height:150px;overflow:hidden;background:rgba(255,255,255,.05)}
-  .atv .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-  .atv:hover .ph img{transform:scale(1.07)}
-  .atv b{display:block;font-family:'Baloo 2';font-size:1.05rem;padding:.85rem .5rem}
-  /* card sem foto: area em branco discreta */
-  .atv.blank .ph{background:
-     repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0 10px,rgba(255,255,255,.015) 10px 20px)}
-  .atv.blank b{color:rgba(255,255,255,.75)}
-  .atv:hover b{color:var(--mel-claro)}
+  .atv{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:1.7rem 1rem;text-align:center;transition:background .25s,transform .25s}
+  .atv:hover{background:var(--mel);color:var(--madeira-esc);transform:translateY(-6px)}
+  .atv .e{font-size:2.3rem;display:block;margin-bottom:.5rem}
+  .atv b{font-family:'Fredoka';font-size:1.02rem}
 
   /* ===== DIFERENCIAIS ===== */
   .dif{padding:6rem 0;background:var(--creme)}
   .dif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.5rem}
   .dif-item{display:flex;gap:1.1rem;background:#fff;border-radius:20px;padding:1.5rem 1.6rem;box-shadow:0 12px 30px -20px rgba(90,58,30,.5);border:1px solid rgba(122,78,40,.07)}
   .dif-item .n{flex:none;width:52px;height:52px;border-radius:16px;background:var(--mel);display:grid;place-items:center;font-size:1.5rem}
-  .dif-item h4{font-family:'Baloo 2';font-size:1.15rem;color:var(--madeira-esc);margin-bottom:.2rem}
+  .dif-item h4{font-family:'Fredoka';font-size:1.15rem;color:var(--madeira-esc);margin-bottom:.2rem}
   .dif-item p{font-size:.95rem;color:var(--tinta-suave)}
 
   /* ===== FRASE ===== */
-  .quote{padding:5rem 0;background:var(--azul);color:#fff;text-align:center;position:relative}
+  .quote{padding:5rem 0;background:var(--madeira-esc);color:#fff;text-align:center;position:relative}
   .quote .wrap{max-width:52ch}
-  .quote p{font-family:'Baloo 2';font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:600;line-height:1.3}
-  .quote span{display:block;margin-top:1rem;font-family:'Nunito';font-weight:700;font-size:1rem;opacity:.9}
+  .quote p{font-family:'Fredoka';font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:600;line-height:1.3}
+  .quote span{display:block;margin-top:1rem;font-family:'Poppins';font-weight:700;font-size:1rem;opacity:.9}
 
   /* ===== CONTATO ===== */
   .contato{padding:6rem 0;background:linear-gradient(180deg,#fff,var(--areia))}
@@ -177,11 +181,11 @@
   .clist{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
   .cline{display:flex;gap:1rem;align-items:flex-start}
   .cline .ci{flex:none;width:46px;height:46px;border-radius:14px;background:var(--mel);display:grid;place-items:center;font-size:1.3rem}
-  .cline b{font-family:'Baloo 2';display:block;color:var(--madeira-esc);font-size:1.02rem}
+  .cline b{font-family:'Fredoka';display:block;color:var(--madeira-esc);font-size:1.02rem}
   .cline a,.cline span{color:var(--tinta-suave);font-weight:600}
-  .cline a:hover{color:var(--azul-esc)}
+  .cline a:hover{color:var(--madeira-esc)}
   .socials{display:flex;gap:.7rem;margin-top:1.8rem}
-  .socials a{width:46px;height:46px;border-radius:50%;background:var(--madeira-esc);color:#fff;display:grid;place-items:center;transition:transform .2s,background .2s;font-weight:700}
+  .socials a{width:46px;height:46px;border-radius:50%;background:#141414;color:#fff;display:grid;place-items:center;transition:transform .2s,background .2s,color .2s;font-weight:700}
   .socials a:hover{transform:translateY(-4px);background:var(--mel);color:var(--madeira-esc)}
   .mapbox{border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra);min-height:420px}
   .mapbox iframe{width:100%;height:100%;min-height:420px;border:0}
@@ -199,9 +203,9 @@
   footer small{display:block;opacity:.6;margin-top:.8rem}
 
   /* floating bee */
-  .float-bee{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(37,211,102,.7);animation:pulse 2.4s infinite}
-  .float-bee svg{width:32px;height:32px;fill:#fff}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .float-bee{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;background:var(--mel);border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(224,149,0,.7);animation:pulse 2.4s infinite}
+  .float-bee svg{width:32px;height:32px;fill:var(--madeira-esc)}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,179,1,.5)}70%{box-shadow:0 0 0 16px rgba(245,179,1,0)}100%{box-shadow:0 0 0 0 rgba(245,179,1,0)}}
 
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
@@ -248,7 +252,7 @@
       <a href="#sobre">A escola</a>
       <a href="#segmentos">Segmentos</a>
       <a href="#atividades">Atividades</a>
-      <a href="#galeria">Galeria</a>
+      <a href="#galeria">Vivências</a>
       <a href="#diferenciais">Diferenciais</a>
       <a href="#contato">Contato</a>
       <a class="btn btn-mel" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Agende uma visita</a>
@@ -280,7 +284,7 @@
   <div class="wrap" style="width:min(1240px,100%)">
     <div class="feats">
       <div class="feat"><span class="ic">🌎</span><div><h4>Programa bilíngue</h4><p>Inglês na rotina a partir dos 2 anos</p></div></div>
-      <div class="feat"><span class="ic">📱</span><div><h4>Berçário monitorado</h4><p>Acompanhe o dia do bebê pelo aplicativo</p></div></div>
+      <div class="feat"><span class="ic">📔</span><div><h4>Agenda digital</h4><p>Acompanhe as vivências do dia pelo aplicativo</p></div></div>
       <div class="feat"><span class="ic">🥗</span><div><h4>Nutrição cuidada</h4><p>Acompanhamento nutricional das refeições</p></div></div>
       <div class="feat"><span class="ic">🏡</span><div><h4>Ambiente acolhedor</h4><p>O espaço como o terceiro educador</p></div></div>
     </div>
@@ -320,7 +324,7 @@
         <h3>Berçário, Fase Colinho</h3>
         <div class="idade">Bebês de 4 a 18 meses</div>
         <p>O acolhimento dos primeiros meses, com rotina de sono, alimentação e muito afeto.</p>
-        <ul><li>Monitoramento pelo aplicativo</li><li>Estímulo sensorial e motor</li><li>Cuidado individualizado</li></ul>
+        <ul><li>Agenda digital de vivências</li><li>Estímulo sensorial e motor</li><li>Cuidado individualizado</li></ul>
       </div>
       <div class="card reveal">
         <span class="tag">1 a 2 anos</span>
@@ -328,7 +332,7 @@
         <h3>Berçário, Fase Passinho</h3>
         <div class="idade">Bebês de 1 a 2 anos</div>
         <p>Os primeiros passos, a descoberta do corpo e a curiosidade que move cada exploração.</p>
-        <ul><li>Psicomotricidade</li><li>Musicalização</li><li>Início do bilíngue aos 2 anos</li></ul>
+        <ul><li>Psicomotricidade</li><li>Musicalização</li><li>Descobertas e autonomia</li></ul>
       </div>
       <div class="card reveal">
         <span class="tag">2 a 5 anos</span>
@@ -336,7 +340,7 @@
         <h3>Educação Infantil</h3>
         <div class="idade">Crianças de 2 a 5 anos</div>
         <p>Brincar, criar e conviver, preparando o caminho para a alfabetização com autonomia.</p>
-        <ul><li>Programa bilíngue</li><li>Ballet e capoeira</li><li>Projetos e vivências</li></ul>
+        <ul><li>Programa bilíngue (a partir do G2)</li><li>Ateliê e capoeira</li><li>Projetos e vivências</li></ul>
       </div>
     </div>
   </div>
@@ -351,11 +355,11 @@
       <p style="color:rgba(255,255,255,.82)">Corpo, música, arte e cultura fazem parte da rotina para desenvolver a criança por inteiro.</p>
     </div>
     <div class="atv-grid">
-      <div class="atv blank reveal"><div class="ph"></div><b>Musicalização</b></div>
-      <div class="atv reveal"><div class="ph"><img src="atv-psico.jpg" alt="Criança em atividade de psicomotricidade e faz de conta"></div><b>Psicomotricidade</b></div>
-      <div class="atv blank reveal"><div class="ph"></div><b>Ballet</b></div>
-      <div class="atv blank reveal"><div class="ph"></div><b>Capoeira</b></div>
-      <div class="atv reveal"><div class="ph"><img src="atv-bilingue.jpg" alt="Criança com fones em atividade de inglês"></div><b>Bilíngue</b></div>
+      <div class="atv reveal"><span class="e">🎵</span><b>Musicalização</b></div>
+      <div class="atv reveal"><span class="e">🥋</span><b>Capoeira</b></div>
+      <div class="atv reveal"><span class="e">🎨</span><b>Ateliê</b></div>
+      <div class="atv reveal"><span class="e">🌎</span><b>Programa bilíngue</b></div>
+      <div class="atv reveal"><span class="e">🧩</span><b>Projetos</b></div>
     </div>
   </div>
 </section>
@@ -369,7 +373,7 @@
     </div>
     <div class="dif-grid">
       <div class="dif-item reveal"><div class="n">🌎</div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
-      <div class="dif-item reveal"><div class="n">📱</div><div><h4>Berçário conectado aos pais</h4><p>Acompanhamento em tempo real do dia do bebê por aplicativo, para famílias tranquilas.</p></div></div>
+      <div class="dif-item reveal"><div class="n">📔</div><div><h4>Agenda digital de vivências</h4><p>Acompanhe o dia do bebê pelo aplicativo, com fotos e registros das vivências, sem câmeras.</p></div></div>
       <div class="dif-item reveal"><div class="n">🥗</div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
       <div class="dif-item reveal"><div class="n">🏡</div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
       <div class="dif-item reveal"><div class="n">👩‍🏫</div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
@@ -392,13 +396,14 @@
       <figure data-cap="Pigmentos da terra"><img src="p01.jpg" alt="Placa de pigmentos naturais"><figcaption class="gal-cap">Cores que vêm da terra</figcaption></figure>
       <figure class="wide" data-cap="Sorrisos que aquecem"><img src="p08.jpg" alt="Bebê sorrindo"><figcaption class="gal-cap">Sorrisos que aquecem o dia</figcaption></figure>
       <figure data-cap="Mãos na terra"><img src="p04.jpg" alt="Mãos com terra e plantas"><figcaption class="gal-cap">Mãozinhas que exploram</figcaption></figure>
-      <figure data-cap="Descobertas sensoriais"><img src="p06.jpg" alt="Bebê explorando folha"><figcaption class="gal-cap">Descobertas sensoriais</figcaption></figure>
-      <figure data-cap="Brincar é aprender"><img src="p09.jpg" alt="Bebê brincando com folha"><figcaption class="gal-cap">Brincar é aprender</figcaption></figure>
       <figure class="tall" data-cap="Concentração e autonomia"><img src="p10.jpg" alt="Criança em atividade com açafrão"><figcaption class="gal-cap">Concentração e autonomia</figcaption></figure>
       <figure data-cap="Cores e texturas"><img src="p11.jpg" alt="Criança pintando com pigmento rosa"><figcaption class="gal-cap">Cores e texturas</figcaption></figure>
       <figure data-cap="Nosso espaço"><img src="p02.jpg" alt="Espaço do ateliê"><figcaption class="gal-cap">Ambientes que convidam a explorar</figcaption></figure>
       <figure data-cap="Musicalidade e ritmo"><img src="p07.jpg" alt="Bebê com prato de madeira"><figcaption class="gal-cap">Ritmo, som e movimento</figcaption></figure>
-      <figure data-cap="Cada criança, uma rainha"><img src="p12.jpg" alt="Menina em atividade sensorial"><figcaption class="gal-cap">Cada criança, uma pequena rainha</figcaption></figure>
+      <figure data-cap="Arte e concentração"><img src="p13.jpg" alt="Criança em atividade de arte"><figcaption class="gal-cap">Arte e concentração</figcaption></figure>
+      <figure class="wide" data-cap="Aprender junto"><img src="p17.jpg" alt="Crianças em atividade em grupo" style="object-position:50% 35%"><figcaption class="gal-cap">Aprender e conviver juntos</figcaption></figure>
+      <figure data-cap="Experiências que encantam"><img src="p16.jpg" alt="Criança em experiência sensorial"><figcaption class="gal-cap">Experiências que encantam</figcaption></figure>
+      <figure data-cap="Desenhando o mundo"><img src="p18.jpg" alt="Criança desenhando no cavalete"><figcaption class="gal-cap">Desenhando o mundo</figcaption></figure>
     </div>
   </div>
 </section>
