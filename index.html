@@ -40,6 +40,11 @@
   .btn-out{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
   .btn-out:hover{background:#fff;color:var(--madeira)}
   .eyebrow{font-family:'Caveat',cursive;font-weight:700;letter-spacing:.02em;font-size:1.35rem;color:var(--mel-escuro)}
+  /* icones finos */
+  .isvg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+  .feat .ic,.card .emoji{color:var(--madeira-esc)}
+  .atv .e{color:var(--mel-claro)}
+  .dif-item .n,.cline .ci{color:var(--madeira-esc)}
   section{position:relative}
 
   /* ===== NAV ===== */
@@ -113,7 +118,7 @@
   .card p{color:var(--tinta-suave);font-size:.98rem}
   .card ul{list-style:none;margin-top:.9rem;display:flex;flex-direction:column;gap:.4rem}
   .card li{font-size:.92rem;font-weight:600;color:var(--tinta);display:flex;gap:.5rem;align-items:center}
-  .card li::before{content:"🐝";font-size:.85rem}
+  .card li::before{content:"";flex:none;width:15px;height:15px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E09500' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l5 5L20 6'/%3E%3C/svg%3E")}
 
   /* foto na secao sobre */
   .art-photo{position:relative;border-radius:32px 32px 32px 60px;overflow:hidden;box-shadow:var(--sombra);border:6px solid #fff;transform:rotate(-1.5deg)}
@@ -231,6 +236,26 @@
 </head>
 <body>
 
+<!-- Biblioteca de icones finos (line icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.5 3 3.5 15 0 18M12 3c-3.5 3-3.5 15 0 18"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18"/><path d="M12 8h4M12 12h4"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12 8.5c-1.1-2.2-3.7-2.6-5.1-.8-1.6 2.1-.5 6 1.2 8.4 1 1.4 2 2.6 3.9 2.6s2.9-1.2 3.9-2.6c1.7-2.4 2.8-6.3 1.2-8.4-1.4-1.8-4-1.4-5 .8Z"/><path d="M12 8.5V5.5"/><path d="M12 6.2c1-1.6 2.6-1.8 3.7-1.3"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.5 12 4.5l8.5 7"/><path d="M5.5 10v9.5h13V10"/><path d="M9.5 19.5v-6h5v6"/></symbol>
+  <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v1.8c0 .7-.3 1.2-.8 1.6C8 7.2 8 8.2 8 9.4V18a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3V9.4c0-1.2 0-2.2-1.2-3C14.3 6 14 5.5 14 4.8V3"/><path d="M8 11h8M8 14h4"/></symbol>
+  <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3.5" y="11.5" width="8" height="8" rx="1.2"/><rect x="13" y="6" width="7" height="7" rx="1.2"/><path d="M5.5 15.5h4M15 9h3"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1 0 1.6-.8 1.6-1.6 0-.4-.2-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.4 1.5-1.4H16a4.5 4.5 0 0 0 4.5-4.5c0-4.1-3.8-7-8.5-7Z"/><circle cx="8" cy="10" r=".8"/><circle cx="12" cy="7.6" r=".8"/><circle cx="16" cy="10" r=".8"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="2.6"/><circle cx="16" cy="16" r="2.6"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.2 7.6L3 21l1.9-5.8A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M21 20v-1.5a4 4 0 0 0-3-3.8"/><path d="M16.5 4.2a3.5 3.5 0 0 1 0 6.6"/></symbol>
+  <symbol id="i-bee" viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="4.5" ry="5.5"/><path d="M8 12.5h8M8 15.5h8"/><path d="M12 8.7c-2.2 0-4 1.4-5.4 3.1M12 8.7c2.2 0 4 1.4 5.4 3.1"/><path d="M10 6.7 8.6 4.8M14 6.7 15.4 4.8"/></symbol>
+</svg>
+
 <!-- SVG da abelha reutilizavel -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="bee" viewBox="0 0 64 64">
@@ -268,7 +293,7 @@
   </video>
   <div class="veil"></div>
   <div class="wrap">
-    <span class="hero-badge">🐝 Desde 1997 em Guarulhos</span>
+    <span class="hero-badge"><svg class="isvg" style="width:1.15em;height:1.15em;margin-right:.2em"><use href="#i-bee"/></svg>Desde 1997 em Guarulhos</span>
     <h1>Onde cada criança <span>cresce, brinca</span> e aprende feliz</h1>
     <p class="lead">Educação Infantil e Berçário para crianças de 4 meses a 5 anos, com acolhimento, brincadeira e um ambiente pensado para florescer.</p>
     <div class="hero-cta">
@@ -283,10 +308,10 @@
 <section class="honey-strip" id="destaques">
   <div class="wrap" style="width:min(1240px,100%)">
     <div class="feats">
-      <div class="feat"><span class="ic">🌎</span><div><h4>Programa bilíngue</h4><p>Inglês na rotina a partir dos 2 anos</p></div></div>
-      <div class="feat"><span class="ic">📔</span><div><h4>Agenda digital</h4><p>Acompanhe as vivências do dia pelo aplicativo</p></div></div>
-      <div class="feat"><span class="ic">🥗</span><div><h4>Nutrição cuidada</h4><p>Acompanhamento nutricional das refeições</p></div></div>
-      <div class="feat"><span class="ic">🏡</span><div><h4>Ambiente acolhedor</h4><p>O espaço como o terceiro educador</p></div></div>
+      <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-globe"/></svg></span><div><h4>Programa bilíngue</h4><p>Inglês na rotina a partir dos 2 anos</p></div></div>
+      <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-book"/></svg></span><div><h4>Agenda digital</h4><p>Acompanhe as vivências do dia pelo aplicativo</p></div></div>
+      <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-apple"/></svg></span><div><h4>Nutrição cuidada</h4><p>Acompanhamento nutricional das refeições</p></div></div>
+      <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-home"/></svg></span><div><h4>Ambiente acolhedor</h4><p>O espaço como o terceiro educador</p></div></div>
     </div>
   </div>
 </section>
@@ -320,7 +345,7 @@
     <div class="cards">
       <div class="card reveal">
         <span class="tag">4 a 18 meses</span>
-        <div class="emoji">🍼</div>
+        <div class="emoji"><svg class="isvg"><use href="#i-bottle"/></svg></div>
         <h3>Berçário, Fase Colinho</h3>
         <div class="idade">Bebês de 4 a 18 meses</div>
         <p>O acolhimento dos primeiros meses, com rotina de sono, alimentação e muito afeto.</p>
@@ -328,7 +353,7 @@
       </div>
       <div class="card reveal">
         <span class="tag">1 a 2 anos</span>
-        <div class="emoji">👣</div>
+        <div class="emoji"><svg class="isvg"><use href="#i-blocks"/></svg></div>
         <h3>Berçário, Fase Passinho</h3>
         <div class="idade">Bebês de 1 a 2 anos</div>
         <p>Os primeiros passos, a descoberta do corpo e a curiosidade que move cada exploração.</p>
@@ -336,7 +361,7 @@
       </div>
       <div class="card reveal">
         <span class="tag">2 a 5 anos</span>
-        <div class="emoji">🎨</div>
+        <div class="emoji"><svg class="isvg"><use href="#i-palette"/></svg></div>
         <h3>Educação Infantil</h3>
         <div class="idade">Crianças de 2 a 5 anos</div>
         <p>Brincar, criar e conviver, preparando o caminho para a alfabetização com autonomia.</p>
@@ -355,11 +380,11 @@
       <p style="color:rgba(255,255,255,.82)">Corpo, música, arte e cultura fazem parte da rotina para desenvolver a criança por inteiro.</p>
     </div>
     <div class="atv-grid">
-      <div class="atv reveal"><span class="e">🎵</span><b>Musicalização</b></div>
-      <div class="atv reveal"><span class="e">🥋</span><b>Capoeira</b></div>
-      <div class="atv reveal"><span class="e">🎨</span><b>Ateliê</b></div>
-      <div class="atv reveal"><span class="e">🌎</span><b>Programa bilíngue</b></div>
-      <div class="atv reveal"><span class="e">🧩</span><b>Projetos</b></div>
+      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-music"/></svg></span><b>Musicalização</b></div>
+      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-activity"/></svg></span><b>Capoeira</b></div>
+      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-palette"/></svg></span><b>Ateliê</b></div>
+      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-globe"/></svg></span><b>Programa bilíngue</b></div>
+      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-grid"/></svg></span><b>Projetos</b></div>
     </div>
   </div>
 </section>
@@ -372,12 +397,12 @@
       <h2 class="sec-title">Cuidado de verdade em cada detalhe</h2>
     </div>
     <div class="dif-grid">
-      <div class="dif-item reveal"><div class="n">🌎</div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
-      <div class="dif-item reveal"><div class="n">📔</div><div><h4>Agenda digital de vivências</h4><p>Acompanhe o dia do bebê pelo aplicativo, com fotos e registros das vivências, sem câmeras.</p></div></div>
-      <div class="dif-item reveal"><div class="n">🥗</div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
-      <div class="dif-item reveal"><div class="n">🏡</div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
-      <div class="dif-item reveal"><div class="n">👩‍🏫</div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
-      <div class="dif-item reveal"><div class="n">🧩</div><div><h4>Aprender brincando</h4><p>Abordagem sócio construtivista que coloca a criança no centro da descoberta.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-globe"/></svg></div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-book"/></svg></div><div><h4>Agenda digital de vivências</h4><p>Acompanhe o dia do bebê pelo aplicativo, com fotos e registros das vivências, sem câmeras.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-apple"/></svg></div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-home"/></svg></div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-users"/></svg></div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
+      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-grid"/></svg></div><div><h4>Aprender brincando</h4><p>Abordagem sócio construtivista que coloca a criança no centro da descoberta.</p></div></div>
     </div>
   </div>
 </section>
@@ -404,6 +429,8 @@
       <figure class="wide" data-cap="Aprender junto"><img src="p17.jpg" alt="Crianças em atividade em grupo" style="object-position:50% 35%"><figcaption class="gal-cap">Aprender e conviver juntos</figcaption></figure>
       <figure data-cap="Experiências que encantam"><img src="p16.jpg" alt="Criança em experiência sensorial"><figcaption class="gal-cap">Experiências que encantam</figcaption></figure>
       <figure data-cap="Desenhando o mundo"><img src="p18.jpg" alt="Criança desenhando no cavalete"><figcaption class="gal-cap">Desenhando o mundo</figcaption></figure>
+      <figure class="wide" data-cap="Criar é coisa séria"><img src="p19.jpg" alt="Crianças criando com elementos naturais" style="object-position:50% 30%"><figcaption class="gal-cap">Criar é coisa séria</figcaption></figure>
+      <figure data-cap="Explorar texturas"><img src="p20.jpg" alt="Criança explorando texturas"><figcaption class="gal-cap">Explorar texturas</figcaption></figure>
     </div>
   </div>
 </section>
@@ -424,10 +451,10 @@
       <h2 class="sec-title">Venha nos visitar</h2>
       <p style="color:var(--tinta-suave)">Agende uma visita e conheça de perto o espaço onde seu filho vai crescer feliz.</p>
       <div class="clist">
-        <div class="cline"><div class="ci">📍</div><div><b>Endereço</b><span>Rua Capitão Rabelo, 93, Vila Milton, Guarulhos, SP</span></div></div>
-        <div class="cline"><div class="ci">💬</div><div><b>WhatsApp</b><a href="https://wa.me/5511961805249" target="_blank" rel="noopener">(11) 96180-5249</a></div></div>
-        <div class="cline"><div class="ci">📞</div><div><b>Telefone</b><a href="tel:+5511961805249">(11) 96180-5249</a></div></div>
-        <div class="cline"><div class="ci">✉️</div><div><b>E-mail</b><a href="mailto:contato@escolaabelharainha.com.br">contato@escolaabelharainha.com.br</a></div></div>
+        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-pin"/></svg></div><div><b>Endereço</b><span>Rua Capitão Rabelo, 93, Vila Milton, Guarulhos, SP</span></div></div>
+        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-chat"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/5511961805249" target="_blank" rel="noopener">(11) 96180-5249</a></div></div>
+        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-phone"/></svg></div><div><b>Telefone</b><a href="tel:+5511961805249">(11) 96180-5249</a></div></div>
+        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-mail"/></svg></div><div><b>E-mail</b><a href="mailto:contato@escolaabelharainha.com.br">contato@escolaabelharainha.com.br</a></div></div>
       </div>
       <div class="socials">
         <a href="https://www.instagram.com/eeiabelharainha/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
@@ -445,7 +472,7 @@
 <!-- CTA FINAL -->
 <section class="final">
   <div class="wrap">
-    <h2>Sua criança merece um lugar especial 🐝</h2>
+    <h2>Sua criança merece um lugar especial <svg class="isvg" style="width:.62em;height:.62em"><use href="#i-bee"/></svg></h2>
     <p>Matrículas abertas. Fale com a gente e agende sua visita hoje mesmo.</p>
     <a class="btn btn-branco" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20matr%C3%ADculas%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Quero fazer a matrícula</a>
   </div>
