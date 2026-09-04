@@ -70,7 +70,7 @@
 
   /* ===== HERO ===== */
   .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff}
-  .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform:scale(1.16)}
   .hero .veil{position:absolute;inset:0;z-index:1;background:
      linear-gradient(180deg,rgba(58,42,23,.55) 0%,rgba(58,42,23,.15) 35%,rgba(58,42,23,.35) 70%,rgba(58,42,23,.78) 100%);}
   .hero .wrap{position:relative;z-index:2;padding:7rem 0 4rem}
@@ -214,8 +214,42 @@
   .float-bee svg{width:32px;height:32px;fill:var(--madeira-esc)}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,179,1,.5)}70%{box-shadow:0 0 0 16px rgba(245,179,1,0)}100%{box-shadow:0 0 0 0 rgba(245,179,1,0)}}
 
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
+  /* ===== ANIMAÇÕES DE ENTRADA ===== */
+  :root{--ease:cubic-bezier(.22,.61,.36,1)}
+  .reveal,[data-anim]{opacity:0;transform:translateY(34px);transition:opacity .85s var(--ease),transform .85s var(--ease);will-change:opacity,transform}
+  .reveal.in,[data-anim].in{opacity:1;transform:none}
+  [data-anim="left"]{transform:translateX(-46px)}
+  [data-anim="right"]{transform:translateX(46px)}
+  [data-anim="scale"]{transform:scale(.9)}
+  [data-anim="fade"]{transform:translateY(0)}
+  /* entrada em cascata dos filhos de um grid */
+  .stagger > *{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease),transform .7s var(--ease);will-change:opacity,transform}
+  .stagger.in > *{opacity:1;transform:none;transition-delay:calc(min(var(--d,0),9) * 70ms)}
+  /* linha de destaque animada sob os títulos de seção */
+  .sec-title{position:relative}
+  .head-center .sec-title::after{content:"";display:block;width:0;height:4px;border-radius:3px;background:var(--mel);margin:.7rem auto 0;transition:width .8s var(--ease) .25s}
+  .head-center.in .sec-title::after{width:64px}
+
+  /* entrada do hero na carga */
+  .hero-badge,.hero h1,.hero p.lead,.hero-cta{opacity:0;transform:translateY(30px);animation:heroIn .95s var(--ease) forwards}
+  .hero-badge{animation-delay:.15s}
+  .hero h1{animation-delay:.34s}
+  .hero p.lead{animation-delay:.54s}
+  .hero-cta{animation-delay:.74s}
+  @keyframes heroIn{to{opacity:1;transform:none}}
+  .hero video,.hero .poster{will-change:transform}
+
+  /* micro-interação nos itens de destaque */
+  .feat{transition:transform .25s var(--ease),background .25s ease}
+  .feat:hover{transform:translateY(-4px)}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal,[data-anim],.stagger > *{opacity:1 !important;transform:none !important;transition:none !important}
+    .hero-badge,.hero h1,.hero p.lead,.hero-cta{animation:none;opacity:1;transform:none}
+    .head-center .sec-title::after{transition:none}
+    .hero-scroll,.float-bee,.sobre .art{animation:none !important}
+  }
 
   @media(max-width:900px){
     .nav-links{position:fixed;inset:0 0 0 auto;width:min(78%,320px);flex-direction:column;justify-content:center;background:var(--creme);padding:2rem;gap:1.6rem;transform:translateX(100%);transition:transform .3s ease;box-shadow:-20px 0 50px -20px rgba(0,0,0,.4)}
@@ -308,7 +342,7 @@
 <!-- FAIXA DESTAQUES -->
 <section class="honey-strip" id="destaques">
   <div class="wrap" style="width:min(1240px,100%)">
-    <div class="feats">
+    <div class="feats stagger">
       <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-globe"/></svg></span><div><h4>Programa bilíngue</h4><p>Inglês na rotina a partir dos 2 anos</p></div></div>
       <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-book"/></svg></span><div><h4>Agenda digital</h4><p>Acompanhe as vivências do dia pelo aplicativo</p></div></div>
       <div class="feat"><span class="ic"><svg class="isvg"><use href="#i-apple"/></svg></span><div><h4>Nutrição cuidada</h4><p>Acompanhamento nutricional das refeições</p></div></div>
@@ -320,18 +354,18 @@
 <!-- SOBRE -->
 <section class="sobre" id="sobre">
   <div class="wrap grid">
-    <div class="reveal">
+    <div data-anim="left">
       <span class="eyebrow">Nossa proposta</span>
       <h2 class="sec-title">Uma escola que aprende junto com a criança</h2>
       <p>Nossa proposta pedagógica se fundamenta na abordagem sócio construtivista, em que o ensino e a aprendizagem acontecem pela interação entre professor e aluno. Valorizamos os conhecimentos que cada criança já traz e construímos, a partir deles, novas descobertas.</p>
       <p>Com materiais diferenciados, muita brincadeira e trocas com colegas e educadores, cada dia é uma oportunidade de crescer com autonomia, afeto e curiosidade.</p>
-      <div class="stats">
-        <div class="stat"><b>+25</b><span>anos de história</span></div>
+      <div class="stats stagger">
+        <div class="stat"><b data-count="25" data-prefix="+">+25</b><span>anos de história</span></div>
         <div class="stat"><b>4m a 5a</b><span>faixa atendida</span></div>
         <div class="stat"><b>1997</b><span>fundada em Guarulhos</span></div>
       </div>
     </div>
-    <div class="art-photo reveal"><img src="p03.jpg" alt="Criança explorando com lupa no ateliê da Escola Abelha Rainha" loading="lazy"></div>
+    <div class="art-photo" data-anim="right"><img src="p03.jpg" alt="Criança explorando com lupa no ateliê da Escola Abelha Rainha" loading="lazy"></div>
   </div>
 </section>
 
@@ -343,8 +377,8 @@
       <h2 class="sec-title">Cada fase no seu tempo</h2>
       <p>Do colinho aos primeiros passos rumo à alfabetização, acompanhamos cada etapa com carinho e intencionalidade.</p>
     </div>
-    <div class="cards">
-      <div class="card reveal">
+    <div class="cards stagger">
+      <div class="card">
         <span class="tag">4 a 18 meses</span>
         <div class="emoji"><svg class="isvg"><use href="#i-bottle"/></svg></div>
         <h3>Berçário, Fase Colinho</h3>
@@ -352,7 +386,7 @@
         <p>O acolhimento dos primeiros meses, com rotina de sono, alimentação e muito afeto.</p>
         <ul><li>Agenda digital de vivências</li><li>Estímulo sensorial e motor</li><li>Cuidado individualizado</li></ul>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <span class="tag">1 a 2 anos</span>
         <div class="emoji"><svg class="isvg"><use href="#i-blocks"/></svg></div>
         <h3>Berçário, Fase Passinho</h3>
@@ -360,7 +394,7 @@
         <p>Os primeiros passos, a descoberta do corpo e a curiosidade que move cada exploração.</p>
         <ul><li>Psicomotricidade</li><li>Musicalização</li><li>Descobertas e autonomia</li></ul>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <span class="tag">2 a 5 anos</span>
         <div class="emoji"><svg class="isvg"><use href="#i-palette"/></svg></div>
         <h3>Educação Infantil</h3>
@@ -380,12 +414,12 @@
       <h2 class="sec-title">Atividades que despertam talentos</h2>
       <p style="color:rgba(255,255,255,.82)">Corpo, música, arte e cultura fazem parte da rotina para desenvolver a criança por inteiro.</p>
     </div>
-    <div class="atv-grid">
-      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-music"/></svg></span><b>Musicalização</b></div>
-      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-activity"/></svg></span><b>Capoeira</b></div>
-      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-palette"/></svg></span><b>Ateliê</b></div>
-      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-globe"/></svg></span><b>Programa bilíngue</b></div>
-      <div class="atv reveal"><span class="e"><svg class="isvg"><use href="#i-grid"/></svg></span><b>Projetos</b></div>
+    <div class="atv-grid stagger">
+      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-music"/></svg></span><b>Musicalização</b></div>
+      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-activity"/></svg></span><b>Capoeira</b></div>
+      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-palette"/></svg></span><b>Ateliê</b></div>
+      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-globe"/></svg></span><b>Programa bilíngue</b></div>
+      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-grid"/></svg></span><b>Projetos</b></div>
     </div>
   </div>
 </section>
@@ -397,13 +431,13 @@
       <span class="eyebrow">Por que a Abelha Rainha</span>
       <h2 class="sec-title">Cuidado de verdade em cada detalhe</h2>
     </div>
-    <div class="dif-grid">
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-globe"/></svg></div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-book"/></svg></div><div><h4>Agenda digital de vivências</h4><p>Acompanhe o dia do bebê pelo aplicativo, com fotos e registros das vivências, sem câmeras.</p></div></div>
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-apple"/></svg></div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-home"/></svg></div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-users"/></svg></div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
-      <div class="dif-item reveal"><div class="n"><svg class="isvg"><use href="#i-grid"/></svg></div><div><h4>Aprender brincando</h4><p>Abordagem sócio construtivista que coloca a criança no centro da descoberta.</p></div></div>
+    <div class="dif-grid stagger">
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-globe"/></svg></div><div><h4>Programa bilíngue</h4><p>Inglês inserido de forma natural na rotina a partir dos 2 anos, respeitando o ritmo de cada criança.</p></div></div>
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-book"/></svg></div><div><h4>Agenda digital de vivências</h4><p>Acompanhe o dia do bebê pelo aplicativo, com fotos e registros das vivências, sem câmeras.</p></div></div>
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-apple"/></svg></div><div><h4>Acompanhamento nutricional</h4><p>Refeições pensadas para uma alimentação saudável e equilibrada em todas as fases.</p></div></div>
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-home"/></svg></div><div><h4>Ambiente como educador</h4><p>Espaços preparados que convidam ao brincar, explorar e aprender com segurança.</p></div></div>
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-users"/></svg></div><div><h4>Equipe dedicada</h4><p>Profissionalismo, afeto e cuidado que fazem parte da nossa história desde 1997.</p></div></div>
+      <div class="dif-item"><div class="n"><svg class="isvg"><use href="#i-grid"/></svg></div><div><h4>Aprender brincando</h4><p>Abordagem sócio construtivista que coloca a criança no centro da descoberta.</p></div></div>
     </div>
   </div>
 </section>
@@ -416,7 +450,7 @@
       <h2 class="sec-title">O dia a dia na Abelha Rainha</h2>
       <p>Explorar, sentir, criar e descobrir. Um pouquinho das vivências reais das nossas crianças.</p>
     </div>
-    <div class="gal-grid reveal">
+    <div class="gal-grid stagger">
       <figure data-cap="Ateliê de tintas naturais"><img src="p05.jpg" alt="Criança pintando com tinta natural"><figcaption class="gal-cap">Ateliê de tintas naturais</figcaption></figure>
       <figure data-cap="Pigmentos da terra"><img src="p01.jpg" alt="Placa de pigmentos naturais"><figcaption class="gal-cap">Cores que vêm da terra</figcaption></figure>
       <figure data-cap="Mãos na terra"><img src="p04.jpg" alt="Mãos com terra e plantas"><figcaption class="gal-cap">Mãozinhas que exploram</figcaption></figure>
@@ -439,7 +473,7 @@
 
 <!-- FRASE -->
 <section class="quote">
-  <div class="wrap">
+  <div class="wrap" data-anim="scale">
     <p>“Aqui, cada criança é única e cuidada como uma pequena rainha.”</p>
     <span>Escola Abelha Rainha, especialista em Educação Infantil</span>
   </div>
@@ -473,7 +507,7 @@
 
 <!-- CTA FINAL -->
 <section class="final">
-  <div class="wrap">
+  <div class="wrap" data-anim="scale">
     <h2>Sua criança merece um lugar especial <svg class="isvg" style="width:.62em;height:.62em"><use href="#i-bee"/></svg></h2>
     <p>Matrículas abertas. Fale com a gente e agende sua visita hoje mesmo.</p>
     <a class="btn btn-branco" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20matr%C3%ADculas%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Quero fazer a matrícula</a>
@@ -509,8 +543,48 @@
   const burger=document.getElementById('burger'),menu=document.getElementById('menu');
   burger.addEventListener('click',()=>menu.classList.toggle('open'));
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // indexa os filhos dos grids para a entrada em cascata
+  document.querySelectorAll('.stagger').forEach(g=>{
+    [...g.children].forEach((c,i)=>c.style.setProperty('--d',i));
+  });
+
+  // contador animado
+  function animCount(el){
+    const end=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+    if(reduce){el.textContent=pre+end+suf;return;}
+    const dur=1400,t0=performance.now();
+    (function step(now){
+      const p=Math.min((now-t0)/dur,1),val=Math.round((1-Math.pow(1-p,3))*end);
+      el.textContent=pre+val+suf;
+      if(p<1)requestAnimationFrame(step);
+    })(t0);
+  }
+
+  const animEls=document.querySelectorAll('.reveal,[data-anim],.stagger');
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(animCount);
+      io.unobserve(e.target);
+    }
+  }),{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  animEls.forEach(el=>io.observe(el));
+
+  // parallax suave do vídeo do hero
+  const heroMedia=document.querySelector('.hero video, .hero .poster');
+  if(heroMedia && !reduce){
+    let ticking=false;
+    addEventListener('scroll',()=>{
+      if(ticking)return;ticking=true;
+      requestAnimationFrame(()=>{
+        const y=Math.min(scrollY,innerHeight);
+        heroMedia.style.transform='translate3d(0,'+(y*0.14)+'px,0) scale(1.16)';
+        ticking=false;
+      });
+    },{passive:true});
+  }
 
   // lightbox da galeria
   const figs=[...document.querySelectorAll('.gal-grid figure img')];
