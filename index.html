@@ -222,6 +222,13 @@
   :root{--ease:cubic-bezier(.22,.61,.36,1)}
   .reveal,[data-anim]{opacity:0;transform:translateY(34px);transition:opacity .85s var(--ease),transform .85s var(--ease);will-change:opacity,transform}
   .reveal.in,[data-anim].in{opacity:1;transform:none}
+
+  /* abelhinha voando pela pagina */
+  .fly-bee{position:fixed;left:0;top:0;width:52px;height:52px;z-index:45;pointer-events:none;will-change:transform;filter:drop-shadow(0 7px 9px rgba(90,58,30,.32))}
+  .fly-bee svg{width:100%;height:100%;display:block;animation:beeflap 1.5s ease-in-out infinite;transform-origin:50% 60%}
+  @keyframes beeflap{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+  @media(max-width:720px){.fly-bee{display:none}}
+  @media(prefers-reduced-motion:reduce){.fly-bee{display:none}}
   [data-anim="left"]{transform:translateX(-46px)}
   [data-anim="right"]{transform:translateX(46px)}
   [data-anim="scale"]{transform:scale(.9)}
@@ -533,6 +540,9 @@
   <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1 1 12 24h-.01a12 12 0 0 1-5.73-1.46L.06 24zM6.6 20.1l.36.22a9.9 9.9 0 0 0 5.05 1.38h.01a9.87 9.87 0 1 0-8.36-4.6l.24.38-1 3.66 3.7-.97zM17.5 14.3c-.15-.25-.55-.4-1.15-.7s-1.35-.66-1.55-.74c-.2-.07-.36-.11-.5.11s-.58.74-.71.89c-.13.15-.26.16-.5.05a8 8 0 0 1-2.36-1.46 8.8 8.8 0 0 1-1.63-2.03c-.17-.29 0-.44.13-.58.11-.13.25-.31.37-.47.12-.16.16-.27.24-.45.08-.18.04-.34-.02-.47-.06-.13-.5-1.32-.7-1.8-.18-.46-.37-.4-.5-.4h-.44a.83.83 0 0 0-.6.28 2.53 2.53 0 0 0-.79 1.88c0 1.11.8 2.18.91 2.33.11.15 1.58 2.41 3.83 3.38a13 13 0 0 0 1.28.47c.54.17 1.03.15 1.42.09.43-.06 1.35-.55 1.54-1.09.19-.53.19-.99.13-1.08z"/></svg>
 </a>
 
+<!-- ABELHINHA VOANDO -->
+<div class="fly-bee" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#bee"/></svg></div>
+
 <!-- LIGHTBOX -->
 <div class="lb" id="lb">
   <span class="x" id="lbx">×</span>
@@ -588,6 +598,29 @@
         ticking=false;
       });
     },{passive:true});
+  }
+
+  // abelhinha que voa acompanhando a rolagem
+  const fly=document.querySelector('.fly-bee');
+  if(fly && !reduce){
+    let cx=innerWidth*0.5, cy=innerHeight*0.28, px=cx;
+    function target(){
+      const max=document.documentElement.scrollHeight-innerHeight;
+      const p=max>0?Math.min(Math.max(scrollY/max,0),1):0;
+      return {
+        x: innerWidth*(0.13+0.70*(0.5+0.5*Math.sin(p*Math.PI*4-1.2))),
+        y: innerHeight*(0.22+0.12*Math.sin(p*Math.PI*6))
+      };
+    }
+    (function loop(){
+      const t=target();
+      cx+=(t.x-cx)*0.07; cy+=(t.y-cy)*0.07;
+      const dir=cx-px; px=cx;
+      const flip=dir<-0.15?-1:1;
+      const tilt=Math.max(-16,Math.min(16,dir*1.4));
+      fly.style.transform='translate('+(cx-26)+'px,'+(cy-26)+'px) rotate('+tilt+'deg) scaleX('+flip+')';
+      requestAnimationFrame(loop);
+    })();
   }
 
   // lightbox da galeria
