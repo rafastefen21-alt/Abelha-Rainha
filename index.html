@@ -158,7 +158,7 @@
   .lb .prev{left:1vw}.lb .next{right:1vw}
 
   /* ===== ATIVIDADES ===== */
-  .atividades{padding:5.5rem 0;background:var(--madeira-esc);color:#fff;position:relative;overflow:hidden}
+  .atividades{padding:4.2rem 2rem;background:var(--madeira-esc);color:#fff;position:relative;overflow:hidden;width:min(1180px,92%);margin:2.6rem auto;border-radius:44px;box-shadow:0 30px 60px -30px rgba(90,58,30,.6)}
   .atividades::before{content:"";position:absolute;inset:0;opacity:.08;background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0l24 14v28L28 56 4 42V14z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M28 56l24 14v28' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M28 56L4 70v28' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");background-size:56px}
   .atividades .wrap{position:relative;z-index:1}
@@ -166,7 +166,8 @@
   .atv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:2.6rem}
   .atv{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:1.7rem 1rem;text-align:center;transition:background .25s,transform .25s}
   .atv:hover{background:var(--mel);color:var(--tinta);transform:translateY(-6px)}
-  .atv .e{font-size:2.3rem;display:block;margin-bottom:.5rem}
+  .atv .e{display:flex;align-items:center;justify-content:center;height:104px;max-width:132px;margin:0 auto .8rem;background:var(--creme);border-radius:22px;padding:10px}
+  .atv .e img{max-height:100%;max-width:100%;width:auto;object-fit:contain;display:block}
   .atv b{font-family:'Barriecito';font-size:1.02rem}
 
   /* ===== DIFERENCIAIS ===== */
@@ -417,11 +418,11 @@
       <p style="color:rgba(255,255,255,.82)">Corpo, música, arte e cultura fazem parte da rotina para desenvolver a criança por inteiro.</p>
     </div>
     <div class="atv-grid stagger">
-      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-music"/></svg></span><b>Musicalização</b></div>
-      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-activity"/></svg></span><b>Capoeira</b></div>
-      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-palette"/></svg></span><b>Ateliê</b></div>
-      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-globe"/></svg></span><b>Programa bilíngue</b></div>
-      <div class="atv"><span class="e"><svg class="isvg"><use href="#i-grid"/></svg></span><b>Projetos</b></div>
+      <div class="atv"><span class="e"><img src="atv-berimbau.png" alt="" loading="lazy"></span><b>Musicalização</b></div>
+      <div class="atv"><span class="e"><img src="atv-capoeira.png" alt="" loading="lazy"></span><b>Capoeira</b></div>
+      <div class="atv"><span class="e"><img src="atv-atelie.png" alt="" loading="lazy"></span><b>Ateliê</b></div>
+      <div class="atv"><span class="e"><img src="atv-brincar.png" alt="" loading="lazy"></span><b>Programa bilíngue</b></div>
+      <div class="atv"><span class="e"><img src="atv-lupa.png" alt="" loading="lazy"></span><b>Projetos</b></div>
     </div>
   </div>
 </section>
