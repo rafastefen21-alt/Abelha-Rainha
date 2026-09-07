@@ -208,15 +208,21 @@
   .final p{font-size:1.1rem;font-weight:600;margin:.7rem auto 1.8rem;max-width:44ch}
 
   /* Footer */
-  footer{background:var(--madeira-esc);color:rgba(255,255,255,.82);padding:2.6rem 0 2rem;text-align:center;font-size:.9rem}
-  footer .logo{justify-content:center;color:#fff;margin-bottom:.8rem}
+  footer{background:
+      linear-gradient(rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg,rgba(122,78,40,.06) 1px,transparent 1px) 0 0/28px 28px,
+      #fffdf7;
+    color:var(--tinta-suave);padding:2.6rem 0 2rem;text-align:center;font-size:.9rem;border-top:1px solid rgba(122,78,40,.12)}
+  footer .logo{justify-content:center;color:var(--tinta);margin-bottom:.8rem}
+  footer .wordmark{filter:brightness(0)}
   footer .fl{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin:.8rem 0 1.2rem}
-  footer .fl a:hover{color:var(--mel-claro)}
-  footer small{display:block;opacity:.6;margin-top:.8rem}
+  footer .fl a{color:var(--tinta-suave)}
+  footer .fl a:hover{color:var(--mel-escuro)}
+  footer small{display:block;opacity:.7;margin-top:.8rem}
 
   /* floating bee */
   .float-bee{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;background:var(--mel);border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(224,149,0,.7);animation:pulse 2.4s infinite}
-  .float-bee svg{width:32px;height:32px;fill:var(--madeira-esc)}
+  .float-bee svg{width:33px;height:33px;fill:var(--madeira-esc);position:relative;top:1px;left:.5px}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,179,1,.5)}70%{box-shadow:0 0 0 16px rgba(245,179,1,0)}100%{box-shadow:0 0 0 0 rgba(245,179,1,0)}}
 
   /* ===== ANIMAÇÕES DE ENTRADA ===== */
@@ -493,8 +499,7 @@
       <div class="clist">
         <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-pin"/></svg></div><div><b>Endereço</b><span>Rua Capitão Rabelo, 93, Vila Milton, Guarulhos, SP</span></div></div>
         <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-chat"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/5511961805249" target="_blank" rel="noopener">(11) 96180-5249</a></div></div>
-        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-phone"/></svg></div><div><b>Telefone</b><a href="tel:+5511961805249">(11) 96180-5249</a></div></div>
-        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-mail"/></svg></div><div><b>E-mail</b><a href="mailto:contato@escolaabelharainha.com.br">contato@escolaabelharainha.com.br</a></div></div>
+        <div class="cline"><div class="ci"><svg class="isvg"><use href="#i-mail"/></svg></div><div><b>E-mail</b><a href="mailto:secretaria@eeiabelharainha.com.br">secretaria@eeiabelharainha.com.br</a></div></div>
       </div>
       <div class="socials">
         <a href="https://www.instagram.com/eeiabelharainha/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
@@ -512,8 +517,8 @@
 <!-- CTA FINAL -->
 <section class="final">
   <div class="wrap" data-anim="scale">
-    <h2>Sua criança merece um lugar especial <svg class="isvg" style="width:.62em;height:.62em"><use href="#i-bee"/></svg></h2>
-    <p>Matrículas abertas. Fale com a gente e agende sua visita hoje mesmo.</p>
+    <h2>O quintal da Abelha é o melhor do mundo ❤️</h2>
+    <p>Proporcione para a sua criança uma infância de verdade. Fale conosco.</p>
     <a class="btn btn-branco" href="https://wa.me/5511961805249?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20matr%C3%ADculas%20na%20Escola%20Abelha%20Rainha." target="_blank" rel="noopener">Quero fazer a matrícula</a>
   </div>
 </section>
